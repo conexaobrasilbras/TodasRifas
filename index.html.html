@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossas Rifas Disponíveis</title>
+    <!-- Tailwind CSS para layout moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animação suave para o modal */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-animate {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-emerald-600 text-white p-2 rounded-xl">
+                    <i class="fa-solid fa-ticket text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-slate-900">
+                    Rifa<span class="text-emerald-600">Prêmio</span>
+                </span>
+            </div>
+            <div class="text-sm font-medium text-slate-500 hidden sm:block">
+                Sorteios 100% seguros pela Loteria Federal
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 sm:py-12">
+        
+        <!-- Título -->
+        <div class="text-center max-w-2xl mx-auto mb-8">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                Rifas Disponíveis
+            </h1>
+        </div>
+
+        <!-- Lista de Rifas (Em linha, uma embaixo da outra) -->
+        <div id="raffles-grid" class="flex flex-col max-w-3xl mx-auto gap-3">
+            <!-- As linhas serão renderizadas via JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-white border-t border-slate-200 mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col items-center justify-center text-center gap-6">
+            
+            <!-- Seção de Contatos Centralizada -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Contatos</h2>
+                
+                <!-- Container flexível pronto para receber novos ícones lado a lado -->
+                <div class="flex flex-wrap items-center justify-center gap-5">
+                    <!-- Link clicável do WhatsApp -->
+                    <a href="https://wa.me/5531985854150" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       aria-label="WhatsApp"
+                       title="Fale conosco pelo WhatsApp"
+                       class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5d] hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg shadow-[#25D366]/40 cursor-pointer">
+                        <svg width="36" height="36" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                        </svg>
+                    </a>
+                    <!-- Novos ícones (Instagram, Facebook, etc.) entrarão aqui lado a lado -->
+                </div>
+            </div>
+
+            <p class="text-slate-500 text-sm pt-6 border-t border-slate-100 w-full">
+                &copy; 2026 RifaPrêmio. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal de Participação (para rifas sem link externo) -->
+    <div id="raffle-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl modal-animate relative">
+            <!-- Botão Fechar -->
+            <button type="button" onclick="closeModal()" aria-label="Fechar janela" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Participar do Sorteio</span>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900 mt-1">Título da Rifa</h3>
+                <p id="modal-price-unit" class="text-sm text-slate-500 mt-1">Valor por cota: R$ 0,00</p>
+            </div>
+
+            <!-- Seletor de Quantidade de Cotas -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-5">
+                <label for="ticket-quantity" class="block text-sm font-semibold text-slate-700 mb-3 text-center">
+                    Quantas cotas você deseja?
+                </label>
+                
+                <!-- Botões de atalho -->
+                <div class="grid grid-cols-4 gap-2 mb-4">
+                    <button type="button" onclick="addTickets(1)" class="py-2 bg-white border border-slate-300 rounded-lg text-sm font-semibold hover:border-emerald-500 hover:text-emerald-600 transition">+1</button>
+                    <button type="button" onclick="addTickets(5)" class="py-2 bg-white border border-slate-300 rounded-lg text-sm font-semibold hover:border-emerald-500 hover:text-emerald-600 transition">+5</button>
+                    <button type="button" onclick="addTickets(10)" class="py-2 bg-white border border-slate-300 rounded-lg text-sm font-semibold hover:border-emerald-500 hover:text-emerald-600 transition">+10</button>
+                    <button type="button" onclick="addTickets(20)" class="py-2 bg-white border border-slate-300 rounded-lg text-sm font-semibold hover:border-emerald-500 hover:text-emerald-600 transition">+20</button>
+                </div>
+
+                <!-- Controle manual -->
+                <div class="flex items-center justify-center space-x-4">
+                    <button type="button" onclick="updateTickets(-1)" aria-label="Diminuir cota" class="w-10 h-10 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold flex items-center justify-center transition">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input type="number" id="ticket-quantity" value="1" min="1" max="500" onchange="calculateTotal()" class="w-20 text-center text-xl font-bold bg-white border border-slate-300 rounded-lg py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <button type="button" onclick="updateTickets(1)" aria-label="Aumentar cota" class="w-10 h-10 rounded-full bg-emerald-100 hover:bg-emerald-200 text-emerald-700 font-bold flex items-center justify-center transition">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resumo e Botão de Ação -->
+            <div class="flex justify-between items-center mb-5 px-1">
+                <span class="text-slate-600 font-medium">Total a pagar:</span>
+                <span id="modal-total" class="text-2xl font-extrabold text-emerald-600">R$ 10,00</span>
+            </div>
+
+            <button type="button" onclick="confirmReservation()" class="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 transition flex items-center justify-center space-x-2">
+                <span>Reservar Cotas Agora</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Notificação Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center space-x-3 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <p class="font-semibold text-sm" id="toast-title">Sucesso!</p>
+            <p class="text-xs text-slate-300" id="toast-message">Cotas reservadas com sucesso.</p>
+        </div>
+    </div>
+
+    <script>
+        // Lista de rifas exibidas em linha (adicione novos objetos aqui para criar novas linhas)
+        const raffles = [
+            {
+                id: 1,
+                title: "Lattafa Pride Tharwah Gold — 100ml",
+                description: "Eau de Parfum • Fragrância Árabe Sofisticada (100% Original e Lacrado)",
+                price: 10.00,
+                image: "perfume.jpg",
+                fallbackImage: "https://placehold.co/600x600/fef9c3/92400e?text=Lattafa+Pride+Tharwah+Gold",
+                link: "https://conexaobrasilbras.github.io/Rifa-perfume/"
+            }
+        ];
+
+        let currentRaffle = null;
+
+        // Formata valores numéricos para Real Brasileiro (R$)
+        function formatCurrency(value) {
+            try {
+                const num = Number(value) || 0;
+                return num.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            } catch (error) {
+                console.error('Erro ao formatar moeda:', error);
+                return 'R$ 0,00';
+            }
+        }
+
+        // Renderiza os itens em formato de linha (um embaixo do outro)
+        function renderRaffles() {
+            try {
+                const grid = document.getElementById('raffles-grid');
+                if (!grid) return;
+                grid.innerHTML = '';
+
+                raffles.forEach(raffle => {
+                    const hasExternalLink = Boolean(raffle.link && raffle.link.trim() !== '');
+                    const rowTag = hasExternalLink ? 'a' : 'div';
+                    const row = document.createElement(rowTag);
+
+                    if (hasExternalLink) {
+                        row.href = raffle.link;
+                        row.target = "_blank";
+                        row.rel = "noopener noreferrer";
+                    } else {
+                        row.addEventListener('click', () => openModal(raffle.id));
+                    }
+
+                    row.className = "bg-white rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md border border-slate-200 hover:border-emerald-400 flex items-center gap-3 sm:gap-4 transition-all duration-200 cursor-pointer group";
+
+                    row.innerHTML = `
+                        <!-- Quadradinho da Foto à Esquerda -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                            <img src="${raffle.image}" 
+                                 onerror="this.onerror=null; this.src='${raffle.fallbackImage}';" 
+                                 alt="${raffle.title}" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                        </div>
+
+                        <!-- Nome e Descrição do Produto no Meio -->
+                        <div class="flex-grow min-w-0 text-left">
+                            <h2 class="text-sm sm:text-base font-bold text-slate-900 truncate group-hover:text-emerald-600 transition-colors">
+                                ${raffle.title}
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-500 line-clamp-1 mt-0.5">
+                                ${raffle.description}
+                            </p>
+                        </div>
+
+                        <!-- Valor da Rifa e Seta à Direita -->
+                        <div class="flex-shrink-0 flex items-center gap-2 sm:gap-3">
+                            <div class="text-right bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">
+                                <span class="block text-[10px] uppercase font-bold text-emerald-700 leading-none mb-0.5">Cota</span>
+                                <span class="text-sm sm:text-base font-extrabold text-emerald-700 whitespace-nowrap">${formatCurrency(raffle.price)}</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center group-hover:bg-emerald-700 transition-colors">
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Erro ao renderizar rifas:', error);
+            }
+        }
+
+        // Abre o modal para rifas sem link externo
+        function openModal(id) {
+            currentRaffle = raffles.find(r => r.id === id);
+            if (!currentRaffle) return;
+
+            document.getElementById('modal-title').innerText = currentRaffle.title;
+            document.getElementById('modal-price-unit').innerText = `Valor por cota: ${formatCurrency(currentRaffle.price)}`;
+            document.getElementById('ticket-quantity').value = 1;
+            calculateTotal();
+
+            const modal = document.getElementById('raffle-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Fecha o modal
+        function closeModal() {
+            const modal = document.getElementById('raffle-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Adiciona quantidade rápida de cotas
+        function addTickets(amount) {
+            const input = document.getElementById('ticket-quantity');
+            const current = parseInt(input.value, 10) || 0;
+            input.value = Math.min(500, Math.max(1, current + amount));
+            calculateTotal();
+        }
+
+        // Incrementa ou decrementa a quantidade de cotas
+        function updateTickets(delta) {
+            const input = document.getElementById('ticket-quantity');
+            const current = parseInt(input.value, 10) || 1;
+            const next = current + delta;
+            if (next >= 1 && next <= 500) {
+                input.value = next;
+                calculateTotal();
+            }
+        }
+
+        // Calcula o valor total com base na quantidade
+        function calculateTotal() {
+            if (!currentRaffle) return;
+            const input = document.getElementById('ticket-quantity');
+            let qty = parseInt(input.value, 10) || 1;
+            if (qty < 1) {
+                qty = 1;
+                input.value = 1;
+            }
+            const total = qty * currentRaffle.price;
+            document.getElementById('modal-total').innerText = formatCurrency(total);
+        }
+
+        // Confirma a reserva e exibe o aviso na tela
+        function confirmReservation() {
+            const qty = document.getElementById('ticket-quantity').value;
+            const title = currentRaffle ? currentRaffle.title : 'Rifa';
+            closeModal();
+            showToast('Reserva Iniciada!', `Você selecionou ${qty} cota(s) para "${title}".`);
+        }
+
+        // Exibe notificação toast no canto inferior direito
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-message').innerText = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+
+        // Fecha o modal ao clicar fora da caixa
+        document.getElementById('raffle-modal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Inicializa a renderização quando o DOM carregar
+        document.addEventListener('DOMContentLoaded', renderRaffles);
+    </script>
+</body>
+</html>
